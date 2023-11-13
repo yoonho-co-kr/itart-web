@@ -279,4 +279,48 @@ div.logo-wrap .logo .text {
         width: auto;
         height: 100%;
     }
+
+    .header-wrap .logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .header-wrap .menu-box {
+        gap: 0;
+        height: 40px;
+    }
+
+    .header-wrap .menu-box .menu {
+        font-size: 16px;
+        padding: 0 8px;
+    }
+
+    .landing .content .fade {
+        width: 100%;
+    }
+
+    .landing .content .title {
+        font-size: 100px;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .landing .content .text-wrap .text-box .slide {
+        top: 140px;
+    }
+
+    .landing .content .sub-title {
+        padding: 0 20px;
+        margin: 0;
+        font-size: 30px;
+        word-break: keep-all;
+    }
+
+    .landing .content .desc {
+        padding: 0 20px;
+        margin: 0;
+        font-size: 20px;
+        word-break: keep-all;
+        margin-top: 10px;
+    }
 }
