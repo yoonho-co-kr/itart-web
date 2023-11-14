@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll-driven Animations: Horizontal Scrolling Section with WAAPI</title>
+
+    <!-- Popover Polyfill -->
+    <link rel="stylesheet" href="/shared/third_party/popover/popover.css">
+    <script src="/shared/third_party/popover/popover.iife.min.js" type="module"></script>
+
+    <!-- Shared styles and scripts, applied to each page -->
+    <link rel="stylesheet" href="/shared/styles.css">
+    <script src="/shared/scripts.js"></script>
+
+    <!-- Page specific styles. The code for the scroll-driven animations is kept in a local style block for your reading convenience -->
+    <link rel="stylesheet" href="../shared/styles.css">
+    <style>
+        /* Position warning box */
+        .warning {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            width: max-content;
+            text-align: center;
+            max-width: 90vw;
+            margin: auto;
+            z-index: 2;
+            color: #333;
+        }
+
+        /** Below is the orig CSS from the original demo. These are wrapped in layer to make the unlayered styles above win from them */
+        @layer orig {
+            :root {
+                --text-color: #111;
+                --bg-color: #b9b3a9;
+            }
+
+            html {
+                max-width: 100vw;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                color: var(--text-color);
+                background: var(--bg-color);
+                transition: 0.3s ease-out;
+                overflow-x: hidden;
+                max-width: 100vw;
+                width: 100%;
+                overscroll-behavior: none;
+            }
+
+            .container section {
+                min-height: 100vh;
+                width: 100%;
+                max-width: 100vw;
+                overflow-x: hidden;
+                position: relative;
+            }
+
+            section:not(#sectionPin, .pin-wrap-sticky) {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-gap: 2rem;
+                padding: 50px 10vw;
+                margin: auto;
+                place-items: center;
+            }
+
+            .container img {
+                height: 80vh;
+                width: auto;
+                max-width: 100%;
+                object-fit: cover;
+            }
+
+            .container h1 {
+                font-size: clamp(1.5rem, 8vw + 1rem, 6rem);
+                line-height: 1;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                position: absolute;
+                top: 10vw;
+                left: 10vw;
+                z-index: 4;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            .container h1 span {
+                display: block;
+            }
+
+            .container h2 {
+                font-size: 2rem;
+                max-width: 400px;
+            }
+
+            .credit a {
+                color: var(--text-color);
+            }
+
+            .container * {
+                box-sizing: border-box;
+            }
+
+            #sectionPin {
+                height: 100vh;
+                display: flex;
+                background: var(--text-color);
+                color: var(--bg-color);
+                overflow: scroll;
+            }
+
+            .pin-wrap {
+                height: 100vh;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 50px 10vw;
+            }
+
+            .pin-wrap>* {
+                min-width: 60vmax;
+                padding: 0 5vmax;
+            }
+
+            .container>p {
+                position: absolute;
+                bottom: 10vw;
+                right: 10vw;
+                width: 200px;
+                line-height: 1.5;
+            }
+        }
+    </style>
+    <script type="module">
+        if (CSS.supports('animation-timeline: view()')) {
+            const $sectionPin = document.querySelector('#sectionPin');
+            const $pinWrapSticky = document.querySelector('.pin-wrap-sticky');
+            const $pinWrap = document.querySelector('.pin-wrap');
+
+            /* Stretch it out, so that we create room for the horizontal scroll animation */
+            $sectionPin.style.height = '500vh';
+            $sectionPin.style.overflow = 'visible'; // To make position sticky work …
+
+            /* Stick to Top */
+            $pinWrapSticky.style.height = '100vh';
+            $pinWrapSticky.style.width = '100vw';
+            $pinWrapSticky.style.position = 'sticky';
+            $pinWrapSticky.style.top = '0';
+            $pinWrapSticky.style.overflowX = 'hidden';
+
+            /* Stretch out pinwrap */
+            $pinWrap.style.height = '100vh';
+            $pinWrap.style.width = '250vmax';
+
+            // Scroll-Linked Animation
+            $pinWrap.animate(
+                {
+                    transform: [``, `translateX(calc(-100% + 100vw))`],
+                    left: '0px',
+                },
+                {
+                    timeline: new ViewTimeline({
+                        subject: $sectionPin,
+                        axis: 'block',
+                    }),
+                    fill: 'forwards',
+                    rangeStart: `contain 0%`,
+                    rangeEnd: `contain 100%`,
+                }
+            );
+        }
+    </script>
+</head>
+
+<body>
+    <!-- metabox -->
+    <div id="metabox">
+        <button id="version-selector" popovertarget="version-selector-popover" data-activeversion="2/2"
+            data-activelang="js">🔀</button>
+        <div id="version-selector-popover" popover anchor="version-selector">
+            <h1>Version selector</h1>
+            <p>This demo has several versions:</p>
+            <ol>
+                <li data-lang="css"><a href="/demos/horizontal-section/css/">CSS <code>scroll-timeline</code></a></li>
+                <li data-lang="js" data-selected><a href="/demos/horizontal-section/waapi/">JavaScript WAAPI +
+                        <code>ScrollTimeline</code></a></li>
+            </ol>
+        </div>
+        <a class="button" href="/" title="To index">🏠</a>
+        <button id="infobox-toggle" title="Show Information about this demo">ℹ️</button>
+        <dialog id="infobox">
+            <form method="dialog"><button id="infobox-close" tabindex="0" title="Close dialog">❌</button></form>
+            <h1>About this demo</h1>
+            <p>This demos sports section that scrolls horizontally as you scroll down.</p>
+            <p>Original demo by Cameron Knight: <a
+                    href="https://codepen.io/cameronknight/pen/qBNvrRQ">https://codepen.io/cameronknight/pen/qBNvrRQ</a>
+            </p>
+
+            <h2>The Code</h2>
+            <pre><code>&lt;section id=&quot;sectionPin&quot;&gt;
+	&lt;div class=&quot;pin-wrap-sticky&quot;&gt;
+		&lt;div class=&quot;pin-wrap&quot;&gt;&hellip;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <pre><code>const $sectionPin = document.querySelector(&apos;#sectionPin&apos;);
+const $pinWrapSticky = document.querySelector(&apos;.pin-wrap-sticky&apos;);
+const $pinWrap = document.querySelector(&apos;.pin-wrap&apos;);
+
+/* Stretch it out, so that we create room for the horizontal scroll animation */
+$sectionPin.style.height = &apos;500vh&apos;;
+$sectionPin.style.overflow = &apos;visible&apos;; // To make position sticky work &mldr;
+
+/* Stick to Top */
+$pinWrapSticky.style.height = &apos;100vh&apos;;
+$pinWrapSticky.style.width = &apos;100vw&apos;;
+$pinWrapSticky.style.position = &apos;sticky&apos;;
+$pinWrapSticky.style.top = &apos;0&apos;;
+$pinWrapSticky.style.overflowX = &apos;hidden&apos;;
+
+/* Stretch out pinwrap */
+$pinWrap.style.height = &apos;100vh&apos;;
+$pinWrap.style.width = &apos;250vmax&apos;;
+
+// Scroll-Linked Animation
+$pinWrap.animate(
+	{
+		transform: [ &grave;&grave;, &grave;translateX(calc(-100% + 100vw))&grave;],
+		left: &apos;0px&apos;,
+	},
+	{
+		timeline: new ViewTimeline({
+			subject: $sectionPin,
+			axis: &apos;block&apos;,
+		}),
+		fill: &apos;forwards&apos;,
+		rangeStart: &grave;contain 0%&grave;,
+		rangeEnd: &grave;contain 100%&grave;,
+	}
+);</code></pre>
+
+            <h2>Explanation</h2>
+            <p>By stretching out <code>#sectionPin</code> to a height of <code>500vh</code>, more scroll estate is
+                created. A ViewTimeline is attached to that element, tracking it as it crosses the scrollport.</p>
+            <p>The intermediary element <code>.pin-wrap-sticky</code> is made sticky, and it’s the
+                <code>.pin-wrap</code> that gets animated on the ViewTimeline.
+            </p>
+            <p>The start position of the horizontal strip <code>.pin-wrap</code> is at <code>0,0</code> within its
+                parent. Its end position is a horizontal translation of <code>-100%</code> to which the viewport width
+                is added. If the viewport width were not taken into account, the element would be entirely out of view.
+            </p>
+        </dialog>
+    </div>
+
+    <div class="warning">
+        <p>⚠️ Your browser does not support Scroll-driven Animations. Please use Chrome 115 or newer.</p>
+    </div>
+
+    <div class="container">
+        <section data-bgcolor="#bcb8ad" data-textcolor="#032f35">
+            <div>
+                <h1><span>Horizontal</span> <span>scroll</span> <span>section</span></h1>
+                <p>With CSS view-timeline</p>
+            </div>
+        </section>
+
+        <section id="sectionPin">
+            <div class="pin-wrap-sticky">
+                <div class="pin-wrap">
+                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</h2>
+                    <img src="../shared/pexels-photo-5207262.jpeg" alt="">
+                    <img src="../shared/pexels-photo-3371358.jpeg" alt="">
+                    <img src="../shared/pexels-photo-3618545.jpeg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section data-bgcolor="#e3857a" data-textcolor="#f1dba7"><img src="../shared/pexels-photo-4791474.jpeg" alt="">
+            <h2 class="credit">
+                Created by <a href="https://twitter.com/bramus" target="_top"
+                    rel="noreferrer noopener">Bramus</a>.<br /><br />Adapted from <a
+                    href="https://codepen.io/cameronknight/pen/qBNvrRQ" target="_top">the original by Cameron
+                    Knight</a>.</h2>
+        </section>
+    </div>
+</body>
+
+</html>
