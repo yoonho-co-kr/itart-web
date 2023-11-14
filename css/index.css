@@ -5,8 +5,13 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'SB-ag-L';
-
+    /* background-color: #333333; */
 }
+
+/* body {
+    display: flex;
+    flex-direction: column;
+} */
 
 @font-face {
     font-family: 'SB-ag-M';
@@ -71,6 +76,7 @@ div.logo-wrap .logo {
     flex-direction: column;
     height: 100%;
     gap: 16px;
+    background: none;
 }
 
 div.logo-wrap .logo .symbol {
@@ -242,10 +248,11 @@ div.logo-wrap .logo .text {
 }
 
 .portfolio {
-    height: 100vh;
+    height: calc(100vh + 1px);
     background-color: #333333;
     position: relative;
     overflow: hidden;
+    margin-top: -1px;
 }
 
 .portfolio .t5 {
@@ -669,6 +676,99 @@ div.logo-wrap .logo .text {
     background: none;
     background-color: #efefef;
     border: 1px solid #f0f0f0;
+}
+
+section.history {
+    height: 100vh;
+    background-color: #333333;
+    position: relative;
+}
+
+section.history .history-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.history .history-wrap .text-box .stack-box {
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 600px;
+    background-color: #ffffff;
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+
+
+section.history .history-wrap .text-box {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 600px;
+    width: 600px;
+    justify-content: space-between;
+
+}
+
+section.history .history-wrap .text-box .text {
+    display: flex;
+    gap: 16px;
+    font-size: 30px;
+    transform: translate(-15px, 0);
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+
+section.history .history-wrap .text-box .text .desc {
+    display: flex;
+    gap: 16px;
+    width: 450px;
+    word-break: keep-all;
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+
+section.history .history-wrap .text-box .text span {
+    font-size: 24px;
+    color: #eb7188;
+}
+
+section.history .history-wrap .text-box .text::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+
+section.history .history-wrap .text-box .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/img/logo-s-white-big.png) no-repeat center / contain;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+section.history.on .history-wrap .text-box .logo {
+    opacity: 0;
+}
+
+section.history.on .history-wrap .text-box .stack-box,
+section.history.on .history-wrap .text-box .text,
+section.history.on .history-wrap .text-box .text .desc,
+section.history.on .history-wrap .text-box .text::before {
+    opacity: 1;
 }
 
 @keyframes window {

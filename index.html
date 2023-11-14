@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="logo-wrap" style="display: none;">
+    <div class="logo-wrap" style="">
         <div class="logo">
             <div class="symbol"></div>
             <div class="text">
@@ -34,14 +34,14 @@
             <div class="menu">MENU 3</div>
         </div>
     </header>
-    <section class="landing" style="display: none;">
+    <section class="landing" style="">
         <!-- <video autoplay="" loop="" muted="" playsinline="" src="/_import_61b31c1ef093d7.80012681-1080.mp4">
         </video> -->
         <video autoplay="" loop="" muted="" playsinline="" src="/video/_import_61b31c1ef093d7.80012681-1080.mp4">
         </video>
 
     </section>
-    <section id="sectionPin" style="display: none;">
+    <section id="sectionPin" style="">
         <div class="pin-wrap-sticky">
 
             <div class="pin-wrap">
@@ -127,7 +127,7 @@
         </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" style="">
         <div class="window">
             <div class="content">
                 <div class="side-bar t5">
@@ -270,7 +270,26 @@
             </div>
         </div>
     </section>
-
+    <section class="history on">
+        <div class="history-wrap">
+            <div class="text-box">
+                <div class="text"><span>9/1</span>
+                    <div class="desc">(주)아이타르트 법인설립</div>
+                </div>
+                <div class="text"><span>9/7</span>
+                    <div class="desc">중소기업 확인 / 중소벤처기업부장관 </div>
+                </div>
+                <div class="text"><span>10/4</span>
+                    <div class="desc">창업기업 확인 / 중소벤처기업부장관</div>
+                </div>
+                <div class="text"><span>11/8</span>
+                    <div class="desc">연구개발전담부서 설립 / 한국산업기술진흥협회장</div>
+                </div>
+                <div class="stack-box"> </div>
+                <div class="logo"></div>
+            </div>
+        </div>
+    </section>
     <script>
         $(document).ready(function () {
             let tscrollTop = $(window).scrollTop() / 10;
@@ -321,9 +340,16 @@
                     $(".pin-wrap .fade .title").html("UI");
                 }
 
+                if ((scrollTop + 50) >= $("section.history").offset().top) {
+                    $("section.history").addClass("on");
+                }
+                else { $("section.history").removeClass("on"); }
+
+                console.log(scrollTop - 50 + ", " + $("section.history").offset().top)
             })
+
         })
-        console.log($(".fade .title"))
+
     </script>
 </body>
 
