@@ -340,7 +340,6 @@
                     $(".header-wrap").addClass("on");
                     $(".fade .title").eq(0).removeClass("hide");
                     $(".slide").removeClass("hide");
-                    console.log("content start")
                 }
                 else {
                     $("div.logo-wrap").removeClass("hidden");
@@ -364,32 +363,25 @@
                 // console.log(ua)
                 if (ua.indexOf('safari') != -1 || ua.indexOf('samsungbrowser') != -1) {
                     if (ua.indexOf('chrome') > -1) {
-                        console.log("chrome")
+
                         if (scrollTop > width * 4 && scrollTop <= width * 8) {
                             $(".pin-wrap .fade .title").html("<span>U</span><span>X</span><span></span>");
-                            console.log("ux")
                         }
                         else if (scrollTop > width * 8) {
                             $(".pin-wrap .fade .title").html("<span>D</span><span>E</span><span>V</span>");
-                            console.log("dev")
                         }
                         else {
                             $(".pin-wrap .fade .title").html("<span>U</span><span>I</span><span></span>");
-                            console.log("ui")
                         }
                     } else {
-                        console.log("safari")
                         if (scrollTop > height * 3 && scrollTop <= height * 4) {
                             $(".pin-wrap .fade .title").html("<span>U</span><span>X</span><span></span>");
-                            console.log("ux")
                         }
                         else if (scrollTop > height * 4) {
                             $(".pin-wrap .fade .title").html("<span>D</span><span>E</span><span>V</span>");
-                            console.log("dev")
                         }
                         else {
                             $(".pin-wrap .fade .title").html("<span>U</span><span>I</span><span></span>");
-                            console.log("ui")
                         }
                     }
                 }
@@ -405,7 +397,6 @@
                 } else {
                     $("#sectionPin.not-chrome .pin-wrap .fade").css("position", "absolute")
                 }
-                console.log(scrollTop + ", " + $("#sectionPin.not-chrome").offset().top)
             })
 
         })
