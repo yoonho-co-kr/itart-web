@@ -37,7 +37,7 @@
     <section class="landing" style="">
         <!-- <video autoplay="" loop="" muted="" playsinline="" src="./video/_import_61b31c1ef093d7.80012681-1080.mp4">
         </video> -->
-        <video autoplay="" loop="" muted="" playsinline="">
+        <video autoplay="" loop="" muted="">
             <source src="./video/_import_61b31c1ef093d7.80012681-1080.mp4" type="video/mp4">
         </video>
     </section>
@@ -370,6 +370,15 @@
         // $pinWrap.style.width = '1200vmax';
 
         // Scroll-Linked Animation
+
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('safari') != -1) {
+            if (ua.indexOf('chrome') > -1) {
+                alert("1") // Chrome
+            } else {
+                alert("2") // Safari
+            }
+        }
         $pinWrap.animate(
             {
                 transform: [``, `translateX(calc(-100% + 100vw))`],
