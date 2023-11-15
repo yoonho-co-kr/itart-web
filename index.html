@@ -35,8 +35,6 @@
         </div>
     </header>
     <section class="landing" style="">
-        <!-- <video autoplay="" loop="" muted="" playsinline="" src="/_import_61b31c1ef093d7.80012681-1080.mp4">
-        </video> -->
         <!-- <video autoplay="" loop="" muted="" playsinline="" src="./video/_import_61b31c1ef093d7.80012681-1080.mp4">
         </video> -->
         <video autoplay="" loop="" muted="" playsinline="">
@@ -351,7 +349,57 @@
             })
 
         })
+        const $sectionPin = document.querySelector('#sectionPin');
+        const $pinWrapSticky = document.querySelector('.pin-wrap-sticky');
+        const $pinWrap = document.querySelector('.pin-wrap');
+        const $fade = document.querySelector('.fade');
 
+        /* Stretch it out, so that we create room for the horizontal scroll animation */
+        // $sectionPin.style.height = '1200vw';
+        // $sectionPin.style.overflow = 'visible'; // To make position sticky work …
+
+        /* Stick to Top */
+        // $pinWrapSticky.style.height = '100vh';
+        // $pinWrapSticky.style.width = '100vw';
+        // $pinWrapSticky.style.position = 'sticky';
+        // $pinWrapSticky.style.top = '0';
+        // $pinWrapSticky.style.overflowX = 'hidden';
+
+        /* Stretch out pinwrap */
+        // $pinWrap.style.height = '100vh';
+        // $pinWrap.style.width = '1200vmax';
+
+        // Scroll-Linked Animation
+        $pinWrap.animate(
+            {
+                transform: [``, `translateX(calc(-100% + 100vw))`],
+                left: '0px',
+            },
+            {
+                timeline: new ViewTimeline({
+                    subject: $sectionPin,
+                    axis: 'block',
+                }),
+                fill: 'forwards',
+                rangeStart: `contain 0%`,
+                rangeEnd: `contain 100%`,
+            }
+        );
+        $fade.animate(
+            {
+                transform: [``, `translateX(calc(100% - 100vw))`],
+                left: '0px',
+            },
+            {
+                timeline: new ViewTimeline({
+                    subject: $sectionPin,
+                    axis: 'block',
+                }),
+                fill: 'forwards',
+                rangeStart: `contain 0%`,
+                rangeEnd: `contain 100%`,
+            }
+        );
     </script>
 </body>
 

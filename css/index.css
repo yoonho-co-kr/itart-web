@@ -173,22 +173,27 @@ div.logo-wrap .logo .text {
 }
 
 
-
 #sectionPin {
     height: 1200vw;
     overflow: visible;
+    background-color: #333333;
+}
+
+/*
+#sectionPin {
+    
+    
 
     view-timeline-name: --section-pin-tl;
     view-timeline-axis: block;
     background-color: #333333;
 }
-
+*/
 .pin-wrap-sticky {
     height: 100vh;
     width: 100vw;
     position: sticky;
     top: 0;
-
     width: 100vw;
     overflow-x: hidden;
 }
@@ -196,15 +201,17 @@ div.logo-wrap .logo .text {
 .pin-wrap {
     height: 100vh;
     width: 1200vmax;
+    /*
     will-change: transform;
     animation: linear move forwards;
     animation-timeline: --section-pin-tl;
-    animation-range: contain 0% contain 100%;
+    animation-range: contain 0% contain 100%; */
     padding-top: 30vh;
 }
 
 .pin-wrap .slide {
     display: flex;
+    /* margin-top: 250px; */
 }
 
 .pin-wrap .fade {
@@ -212,10 +219,10 @@ div.logo-wrap .logo .text {
     left: 120px;
     top: 30vh;
 
-    will-change: transform;
+    /* will-change: transform;
     animation: linear moveback forwards;
     animation-timeline: --section-pin-tl;
-    animation-range: contain 0% contain 100%;
+    animation-range: contain 0% contain 100%; */
 }
 
 .pin-wrap .fade .title {
@@ -927,6 +934,10 @@ section.history.on .history-wrap .text-box .text::before {
         height: 100%;
     }
 
+    .pin-wrap .slide {
+        margin-top: 350px;
+    }
+
     .tab-list {
         top: 34px;
         height: 15px;
@@ -1111,6 +1122,10 @@ section.history.on .history-wrap .text-box .text::before {
     .header-wrap {
         padding: 60px 20px 20px 20px;
         height: 120px;
+    }
+
+    .pin-wrap .slide {
+        margin-top: 20px;
     }
 
     div.logo-wrap {
@@ -1304,5 +1319,10 @@ section.history.on .history-wrap .text-box .text::before {
 
     .portfolio .window:hover .t5 {
         transform: translate(10px, -10px);
+    }
+
+    section.history .history-wrap .text-box {
+        height: 300px;
+        width: 300px;
     }
 }
