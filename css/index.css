@@ -15,17 +15,17 @@ html {
 
 @font-face {
     font-family: 'SB-ag-M';
-    src: url(/font/SB-ag-M.ttf);
+    src: url(../font/SB-ag-M.ttf);
 }
 
 @font-face {
     font-family: 'SB-ag-L';
-    src: url(/font/SB-ag-L.ttf);
+    src: url(../font/SB-ag-L.ttf);
 }
 
 @font-face {
     font-family: 'SB-ag-B';
-    src: url(/font/SB-ag-B.ttf);
+    src: url(../font/SB-ag-B.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -82,13 +82,13 @@ div.logo-wrap .logo {
 div.logo-wrap .logo .symbol {
     height: 100px;
     width: 100px;
-    background: url(/img/logo-s-white.png) no-repeat center / contain;
+    background: url(../img/logo-s-white.png) no-repeat center / contain;
 }
 
 div.logo-wrap .logo .text {
     width: 100px;
     height: 20px;
-    background: url(/img/logo-t-white.png) no-repeat center / contain;
+    background: url(../img/logo-t-white.png) no-repeat center / contain;
 }
 
 .header-wrap {
@@ -121,7 +121,7 @@ div.logo-wrap .logo .text {
     transition: 0.3s;
     transition-delay: 0.3s;
     pointer-events: none;
-    background: url(/img/logo-s-white.png) no-repeat center / contain;
+    background: url(../img/logo-s-white.png) no-repeat center / contain;
 }
 
 .header-wrap.on .logo {
@@ -271,7 +271,7 @@ div.logo-wrap .logo .text {
     transform: perspective(900px) translate(-50%, -50%);
     perspective-origin: center;
     /* animation: window 10s infinite; */
-    background: url(/img/window.png) no-repeat center / contain;
+    background: url(../img/window.png) no-repeat center / contain;
     border-radius: 6px;
     transform-style: preserve-3d;
     z-index: 10;
@@ -320,7 +320,7 @@ div.logo-wrap .logo .text {
 }
 
 .portfolio .window .content .side-bar .logo {
-    background: url(/img/logo-s-white.png) no-repeat center / contain;
+    background: url(../img/logo-s-white.png) no-repeat center / contain;
     width: 100%;
     height: 20px;
     margin-bottom: 10px;
@@ -356,43 +356,43 @@ div.logo-wrap .logo .text {
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(2) .icon {
-    background: url(/icon/side1.svg) no-repeat center / contain;
+    background: url(../icon/side1.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(3) .icon {
-    background: url(/icon/side2.svg) no-repeat center / contain;
+    background: url(../icon/side2.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(4) .icon {
-    background: url(/icon/side3.svg) no-repeat center / contain;
+    background: url(../icon/side3.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(5) .icon {
-    background: url(/icon/side4.svg) no-repeat center / contain;
+    background: url(../icon/side4.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(6) .icon {
-    background: url(/icon/side5.svg) no-repeat center / contain;
+    background: url(../icon/side5.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(7) .icon {
-    background: url(/icon/side6.svg) no-repeat center / contain;
+    background: url(../icon/side6.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(8) .icon {
-    background: url(/icon/side7.svg) no-repeat center / contain;
+    background: url(../icon/side7.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(9) .icon {
-    background: url(/icon/side8.svg) no-repeat center / contain;
+    background: url(../icon/side8.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(10) .icon {
-    background: url(/icon/side9.svg) no-repeat center / contain;
+    background: url(../icon/side9.svg) no-repeat center / contain;
 }
 
 .portfolio .window .content .side-bar .side-button:nth-child(11) .icon {
-    background: url(/icon/side10.svg) no-repeat center / contain;
+    background: url(../icon/side10.svg) no-repeat center / contain;
 }
 
 
@@ -443,7 +443,7 @@ div.logo-wrap .logo .text {
 }
 
 .header>div>.select .icon {
-    background: url(/icon/header1.svg) no-repeat center / contain;
+    background: url(../icon/header1.svg) no-repeat center / contain;
 }
 
 .header>div>.input {
@@ -458,19 +458,19 @@ div.logo-wrap .logo .text {
 }
 
 .header>div>.input .icon {
-    background: url(/icon/header2.svg) no-repeat center / contain;
+    background: url(../icon/header2.svg) no-repeat center / contain;
 }
 
 .header>div>.alarm {
-    background: url(/icon/header3.svg) no-repeat center / contain;
+    background: url(../icon/header3.svg) no-repeat center / contain;
 }
 
 .header>div>.setting {
-    background: url(/icon/header4.svg) no-repeat center / contain;
+    background: url(../icon/header4.svg) no-repeat center / contain;
 }
 
 .header>div>.mypage .icon {
-    background: url(/icon/header5.svg) no-repeat center / contain;
+    background: url(../icon/header5.svg) no-repeat center / contain;
 }
 
 .tab-list {
@@ -490,15 +490,15 @@ div.logo-wrap .logo .text {
 }
 
 .tab-list .tab.on {
-    background: url(/img/tab1.png) no-repeat center / contain;
+    background: url(../img/tab1.png) no-repeat center / contain;
 }
 
 .tab-list .tab:nth-child(2) {
-    background: url(/img/tab2.png) no-repeat center / contain;
+    background: url(../img/tab2.png) no-repeat center / contain;
 }
 
 .tab-list .tab:nth-child(3) {
-    background: url(/img/tab2.png) no-repeat center / contain;
+    background: url(../img/tab2.png) no-repeat center / contain;
 }
 
 .filter-list {
@@ -524,7 +524,7 @@ div.logo-wrap .logo .text {
 .filter-list .top .left {
     width: 230px;
     height: 25px;
-    background: url(/img/filter-top-l.png) no-repeat center / contain;
+    background: url(../img/filter-top-l.png) no-repeat center / contain;
     border-radius: 6px;
     overflow: hidden;
 
@@ -533,7 +533,7 @@ div.logo-wrap .logo .text {
 .filter-list .top .right {
     width: 110px;
     height: 20px;
-    background: url(/img/filter-top-r.png) no-repeat center / contain;
+    background: url(../img/filter-top-r.png) no-repeat center / contain;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -541,7 +541,7 @@ div.logo-wrap .logo .text {
 .filter-list .bottom {
     width: 100%;
     height: 20px;
-    background: url(/img/filter-bot.png) no-repeat center / contain;
+    background: url(../img/filter-bot.png) no-repeat center / contain;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -598,77 +598,77 @@ div.logo-wrap .logo .text {
 
 .content-wrap .content-box div:nth-child(1) {
     grid-area: a;
-    background: url(/img/grid-a.png) no-repeat left / contain;
+    background: url(../img/grid-a.png) no-repeat left / contain;
     width: 60%;
 
 }
 
 .content-wrap .content-box div:nth-child(2) {
     grid-area: b;
-    background: url(/img/grid-b.png) no-repeat right / contain;
+    background: url(../img/grid-b.png) no-repeat right / contain;
     width: 55%;
     margin-left: 45%;
 }
 
 .content-wrap .content-box div:nth-child(3) {
     grid-area: c;
-    background: url(/img/grid-c.png) no-repeat center / contain;
+    background: url(../img/grid-c.png) no-repeat center / contain;
     width: 140px;
 }
 
 .content-wrap .content-box div:nth-child(4) {
     grid-area: d;
-    background: url(/img/grid-d.png) no-repeat right / contain;
+    background: url(../img/grid-d.png) no-repeat right / contain;
     width: 70px;
     margin-left: 22px;
 }
 
 .content-wrap .content-box div:nth-child(5) {
     grid-area: e;
-    background: url(/img/grid-e.png) no-repeat center / contain;
+    background: url(../img/grid-e.png) no-repeat center / contain;
     height: 3vmin;
 }
 
 .content-wrap .content-box div:nth-child(6) {
     grid-area: f;
-    background: url(/img/grid-f.png) no-repeat center / contain;
+    background: url(../img/grid-f.png) no-repeat center / contain;
     width: 50%;
 }
 
 .content-wrap .content-box div:nth-child(7) {
     grid-area: g;
-    background: url(/img/grid-g.png) no-repeat right / contain;
+    background: url(../img/grid-g.png) no-repeat right / contain;
     width: 50%;
     margin-left: 50%;
 }
 
 .content-wrap .content-box div:nth-child(8) {
     grid-area: h;
-    background: url(/img/grid-h.png) no-repeat center / contain;
+    background: url(../img/grid-h.png) no-repeat center / contain;
     width: 50%;
 }
 
 .content-wrap .content-box div:nth-child(9) {
     grid-area: i;
-    background: url(/img/grid-i.png) no-repeat center / contain;
+    background: url(../img/grid-i.png) no-repeat center / contain;
 }
 
 .content-wrap .content-box div:nth-child(10) {
     grid-area: j;
-    background: url(/img/grid-j.png) no-repeat left / contain;
+    background: url(../img/grid-j.png) no-repeat left / contain;
     height: 60%;
 }
 
 .content-wrap .content-box div:nth-child(11) {
     grid-area: k;
-    background: url(/img/grid-k.png) no-repeat center / contain;
+    background: url(../img/grid-k.png) no-repeat center / contain;
     height: 3vmin;
     width: 60%;
 }
 
 .content-wrap .content-box div:nth-child(12) {
     grid-area: l;
-    background: url(/img/grid-l.png) no-repeat center / contain;
+    background: url(../img/grid-l.png) no-repeat center / contain;
     height: 50%;
 }
 
@@ -755,13 +755,14 @@ section.history .history-wrap .text-box .logo {
     top: 0;
     width: 100%;
     height: 100%;
-    background: url(/img/logo-s-white-big.png) no-repeat center / contain;
+    background: url(../img/logo-s-white-big.png) no-repeat center / contain;
     opacity: 1;
-    transition: 0.3s;
+    transition-delay: 0.3s;
 }
 
 section.history.on .history-wrap .text-box .logo {
     opacity: 0;
+    transition: 0.3s;
 }
 
 section.history.on .history-wrap .text-box .stack-box,
