@@ -9,10 +9,11 @@ html {
     scroll-behavior: smooth;
 }
 
-ul li a {
+ul,
+li,
+a {
     text-decoration: none;
     color: #b61c1c;
-    /* For Example */
 }
 
 body {
