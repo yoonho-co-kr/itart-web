@@ -33,10 +33,10 @@ body {
     src: url(../font/SB-ag-B.ttf);
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
     appearance: none;
     display: none;
-} */
+}
 
 section.landing {
     width: 100%;
@@ -770,7 +770,7 @@ section.history .history-wrap .text-box .logo {
 }
 
 section.history.on .history-wrap .text-box .logo {
-    opacity: 0;
+    opacity: 0.03;
     transition: 0.3s;
 }
 
