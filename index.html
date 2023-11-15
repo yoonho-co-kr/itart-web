@@ -273,6 +273,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="perspective">입체 보기</div>
     </section>
     <section class="history on" id="history">
         <div class="history-wrap">
@@ -385,6 +387,11 @@
                         }
                     }
                 }
+                if (scrollTop >= $("#sectionPin.not-chrome").offset().top && scrollTop < $(".portfolio").offset().top) {
+                    $("#sectionPin.not-chrome .pin-wrap .fade").css("position", "fixed")
+                } else {
+                    $("#sectionPin.not-chrome .pin-wrap .fade").css("position", "absolute")
+                }
 
                 //회사연혁내용보이기
                 if ((scrollTop + 100) >= $("section.history").offset().top) {
@@ -392,13 +399,13 @@
                 }
                 else { $("section.history").removeClass("on"); }
 
-                if (scrollTop >= $("#sectionPin.not-chrome").offset().top && scrollTop < $(".portfolio").offset().top) {
-                    $("#sectionPin.not-chrome .pin-wrap .fade").css("position", "fixed")
-                } else {
-                    $("#sectionPin.not-chrome .pin-wrap .fade").css("position", "absolute")
-                }
-            })
 
+
+            })
+            //포트폴리오 3D
+            $(".perspective").on("click", function () {
+                $(".window").toggleClass("on");
+            })
         })
         const $sectionPin = document.querySelector('#sectionPin');
         const $pinWrapSticky = document.querySelector('.pin-wrap-sticky');

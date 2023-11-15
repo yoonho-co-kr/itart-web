@@ -353,12 +353,29 @@ div.logo-wrap .logo .text {
     transition-delay: 0.5s;
 }
 
-.portfolio .window:hover {
+.portfolio .perspective {
+    width: 100px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.07);
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    font-family: 'sb-ag-m';
+}
+
+.portfolio .window.on {
     transition-delay: 0s;
     transform: perspective(900px) translate(-50%, -50%) rotate(-30deg) skew(25deg);
 }
 
-.portfolio .window:hover .t5 {
+.portfolio .window.on .t5 {
     transition-delay: 0.5s;
     transform: translate(20px, -20px);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1089,7 +1106,7 @@ section.history.on .history-wrap .text-box .text::before {
         font-size: 20px;
     }
 
-    .portfolio .window:hover .t5 {
+    .portfolio .window.on .t5 {
         transform: translate(10px, -10px);
     }
 
@@ -1190,7 +1207,7 @@ section.history.on .history-wrap .text-box .text::before {
         height: 20px;
     }
 
-    .portfolio .window:hover .t5 {
+    .portfolio .window.on .t5 {
         transform: translate(10px, -10px);
     }
 
@@ -1317,6 +1334,11 @@ section.history.on .history-wrap .text-box .text::before {
         padding: 0 20px;
     }
 
+    .portfolio .window .content {
+        margin-top: 30px;
+        height: calc(100% - 30px);
+    }
+
     .portfolio .window .content .side-bar {
         width: 40px;
         padding: 2px;
@@ -1402,7 +1424,8 @@ section.history.on .history-wrap .text-box .text::before {
     .content-wrap {
         height: 64%;
         top: 52px;
-        width: calc(100% - 52px);
+        width: calc(100% - 50px);
+        gap: 2px;
     }
 
     .content-wrap {
@@ -1422,6 +1445,7 @@ section.history.on .history-wrap .text-box .text::before {
             "e e e e"
             "f g h i"
             "j j k l";
+        border-radius: 2px;
     }
 
     .content-wrap .content-box div {
@@ -1446,7 +1470,7 @@ section.history.on .history-wrap .text-box .text::before {
         height: 20px;
     }
 
-    .portfolio .window:hover .t5 {
+    .portfolio .window.on .t5 {
         transform: translate(10px, -10px);
     }
 
