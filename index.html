@@ -23,18 +23,22 @@
         <div class="menu"></div>
     </div>
     <header class="header-wrap">
-        <div class="logo"></div>
+        <a href="#landing">
+            <div class="logo"></div>
+        </a>
         <div class="menu-box">
-            <div class="menu">
-                <span>
-                    한글 1
-                </span>
-            </div>
-            <div class="menu">MENU 2</div>
-            <div class="menu">MENU 3</div>
+            <a href="#sectionPin">
+                <div class="menu">소개</div>
+            </a>
+            <a href="#portfolio">
+                <div class="menu">포트폴리오</div>
+            </a>
+            <a href="#history">
+                <div class="menu">회사연혁</div>
+            </a>
         </div>
     </header>
-    <section class="landing" style="">
+    <section class="landing" style="" id="landing">
         <!-- <video autoplay="" loop="" muted="" playsinline="" src="./video/_import_61b31c1ef093d7.80012681-1080.mp4">
         </video> -->
         <video autoplay="" loop="" muted="">
@@ -46,7 +50,7 @@
 
             <div class="pin-wrap">
                 <div class="fade">
-                    <div class="title">UI</div>
+                    <div class="title"><span>U</span><span>I</span><span></span></div>
                 </div>
                 <div class="slide hide">
                     <div class="text">
@@ -127,7 +131,7 @@
         </div>
         </div>
     </section>
-    <section class="portfolio" style="">
+    <section class="portfolio" style="" id="portfolio">
         <div class="window">
             <div class="content">
                 <div class="side-bar t5">
@@ -270,7 +274,7 @@
             </div>
         </div>
     </section>
-    <section class="history on">
+    <section class="history on" id="history">
         <div class="history-wrap">
             <div class="text-box">
                 <div class="text"><span>9/1</span>
@@ -290,8 +294,33 @@
             </div>
         </div>
     </section>
+    <footer>
+
+    </footer>
     <script>
         $(document).ready(function () {
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
             let tscrollTop = $(window).scrollTop() / 10;
             let lscrollTop = $(window).scrollTop() / 20;
 
@@ -330,22 +359,53 @@
                 let sscrollTop = ($(window).scrollTop() - getScrollSize) / 60
                 tscrollTop = $(window).scrollTop();
                 logoEffect();
-                if (scrollTop > width * 4 && scrollTop <= width * 8) {
-                    $(".pin-wrap .fade .title").html("UX");
-                }
-                else if (scrollTop > width * 8) {
-                    $(".pin-wrap .fade .title").html("Dev.");
-                }
-                else {
-                    $(".pin-wrap .fade .title").html("UI");
+
+                // 배경글씨바꾸기
+                // console.log(ua)
+                if (ua.indexOf('safari') != -1 || ua.indexOf('samsungbrowser') != -1) {
+                    if (ua.indexOf('chrome') > -1) {
+                        console.log("chrome")
+                        if (scrollTop > width * 4 && scrollTop <= width * 8) {
+                            $(".pin-wrap .fade .title").html("<span>U</span><span>X</span><span></span>");
+                            console.log("ux")
+                        }
+                        else if (scrollTop > width * 8) {
+                            $(".pin-wrap .fade .title").html("<span>D</span><span>E</span><span>V</span>");
+                            console.log("dev")
+                        }
+                        else {
+                            $(".pin-wrap .fade .title").html("<span>U</span><span>I</span><span></span>");
+                            console.log("ui")
+                        }
+                    } else {
+                        console.log("safari")
+                        if (scrollTop > height * 3 && scrollTop <= height * 4) {
+                            $(".pin-wrap .fade .title").html("<span>U</span><span>X</span><span></span>");
+                            console.log("ux")
+                        }
+                        else if (scrollTop > height * 4) {
+                            $(".pin-wrap .fade .title").html("<span>D</span><span>E</span><span>V</span>");
+                            console.log("dev")
+                        }
+                        else {
+                            $(".pin-wrap .fade .title").html("<span>U</span><span>I</span><span></span>");
+                            console.log("ui")
+                        }
+                    }
                 }
 
-                if ((scrollTop + 50) >= $("section.history").offset().top) {
+                //회사연혁내용보이기
+                if ((scrollTop + 100) >= $("section.history").offset().top) {
                     $("section.history").addClass("on");
                 }
                 else { $("section.history").removeClass("on"); }
 
-                console.log(scrollTop - 50 + ", " + $("section.history").offset().top)
+                if (scrollTop >= $("#sectionPin.not-chrome").offset().top && scrollTop < $(".portfolio").offset().top) {
+                    $("#sectionPin.not-chrome .pin-wrap .fade").css("position", "fixed")
+                } else {
+                    $("#sectionPin.not-chrome .pin-wrap .fade").css("position", "absolute")
+                }
+                console.log(scrollTop + ", " + $("#sectionPin.not-chrome").offset().top)
             })
 
         })
@@ -354,61 +414,48 @@
         const $pinWrap = document.querySelector('.pin-wrap');
         const $fade = document.querySelector('.fade');
 
-        /* Stretch it out, so that we create room for the horizontal scroll animation */
-        // $sectionPin.style.height = '1200vw';
-        // $sectionPin.style.overflow = 'visible'; // To make position sticky work …
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('safari') != -1 || ua.indexOf('samsungbrowser') != -1) {
+            if (ua.indexOf('chrome') > -1) {
+                $pinWrap.animate(
+                    {
+                        transform: [``, `translateX(calc(-100% + 100vw))`],
+                        left: '0px',
+                    },
+                    {
+                        timeline: new ViewTimeline({
+                            subject: $sectionPin,
+                            axis: 'block',
+                        }),
+                        fill: 'forwards',
+                        rangeStart: `contain 0%`,
+                        rangeEnd: `contain 100%`,
+                    }
+                );
+                $fade.animate(
+                    {
+                        transform: [``, `translateX(calc(100% - 100vw))`],
+                        left: '0px',
+                    },
+                    {
+                        timeline: new ViewTimeline({
+                            subject: $sectionPin,
+                            axis: 'block',
+                        }),
+                        fill: 'forwards',
+                        rangeStart: `contain 0%`,
+                        rangeEnd: `contain 100%`,
+                    }
+                );
+            } else {
+                // Safari
+                $("#sectionPin").addClass("not-chrome");
 
-        /* Stick to Top */
-        // $pinWrapSticky.style.height = '100vh';
-        // $pinWrapSticky.style.width = '100vw';
-        // $pinWrapSticky.style.position = 'sticky';
-        // $pinWrapSticky.style.top = '0';
-        // $pinWrapSticky.style.overflowX = 'hidden';
-
-        /* Stretch out pinwrap */
-        // $pinWrap.style.height = '100vh';
-        // $pinWrap.style.width = '1200vmax';
-
-        // Scroll-Linked Animation
-
-        // var ua = navigator.userAgent.toLowerCase();
-        // if (ua.indexOf('safari') != -1) {
-        //     if (ua.indexOf('chrome') > -1) {
-        //         alert("1") // Chrome
-        //     } else {
-        //         alert("2") // Safari
-        //     }
-        // }
-        $pinWrap.animate(
-            {
-                transform: [``, `translateX(calc(-100% + 100vw))`],
-                left: '0px',
-            },
-            {
-                timeline: new ViewTimeline({
-                    subject: $sectionPin,
-                    axis: 'block',
-                }),
-                fill: 'forwards',
-                rangeStart: `contain 0%`,
-                rangeEnd: `contain 100%`,
             }
-        );
-        $fade.animate(
-            {
-                transform: [``, `translateX(calc(100% - 100vw))`],
-                left: '0px',
-            },
-            {
-                timeline: new ViewTimeline({
-                    subject: $sectionPin,
-                    axis: 'block',
-                }),
-                fill: 'forwards',
-                rangeStart: `contain 0%`,
-                rangeEnd: `contain 100%`,
-            }
-        );
+
+
+        }
+
     </script>
 </body>
 
