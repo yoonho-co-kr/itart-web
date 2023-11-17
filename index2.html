@@ -91,6 +91,15 @@
                     </div>
                     <button class="contact">문의하기</button>
                 </div>
+                <div class="burger-menu">
+                    <div class="background">
+                        <button class="menu__icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -230,32 +239,41 @@
     <section class="history" id="history">
         <div class="title">HISTORY</div>
         <div class="content">
-            <ul class="history-box">
-                <li>
-                    <div class="circle"></div>
-                    <div class="date">2023 11/08</div>
-                    <div class="title">연구개발전담부서 설립</div>
-                    <div class="desc">한국산업기술진흥협회장</div>
-                </li>
-                <li>
-                    <div class="circle"></div>
-                    <div class="date">2023 10/04</div>
-                    <div class="title">창업기업 확인</div>
-                    <div class="desc">중소벤처기업부장관</div>
-                </li>
-                <li>
-                    <div class="circle"></div>
-                    <div class="date">2023 09/07</div>
-                    <div class="title">중소기업 확인</div>
-                    <div class="desc">중소벤처기업부장관</div>
-                </li>
-                <li>
-                    <div class="circle"></div>
-                    <div class="date">2023 09/01</div>
-                    <div class="title">(주)아이타르트 법인설립</div>
-                    <div class="desc"></div>
-                </li>
-            </ul>
+            <div class="year-box">
+                <div class="year-title">2023</div>
+                <ul class="history-box">
+                    <li>
+                        <!-- <div class="circle"></div> -->
+                        <div class="date">11/16</div>
+                        <div class="title">여성기업 확인</div>
+                        <div class="desc">강원지방중소벤처기업청장</div>
+                    </li>
+                    <li>
+                        <!-- <div class="circle"></div> -->
+                        <div class="date">11/08</div>
+                        <div class="title">연구개발전담부서 설립</div>
+                        <div class="desc">한국산업기술진흥협회장</div>
+                    </li>
+                    <li>
+                        <!-- <div class="circle"></div> -->
+                        <div class="date">10/04</div>
+                        <div class="title">창업기업 확인</div>
+                        <div class="desc">중소벤처기업부장관</div>
+                    </li>
+                    <li>
+                        <!-- <div class="circle"></div> -->
+                        <div class="date">09/07</div>
+                        <div class="title">중소기업 확인</div>
+                        <div class="desc">중소벤처기업부장관</div>
+                    </li>
+                    <li>
+                        <!-- <div class="circle"></div> -->
+                        <div class="date">09/01</div>
+                        <div class="title">(주)아이타르트 법인설립</div>
+                        <div class="desc"></div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
     <section class="newsletter" id="newsletter">
@@ -302,14 +320,10 @@
                             <div class="underline"></div>
                         </div>
                         <div class="input-container">
-                            <!-- <input type="text" id="input" required=""> -->
                             <textarea name="" id="textarea" cols="30" rows="10" required=""></textarea>
                             <label for="textarea" class="label">문의내용</label>
                             <div class="underline"></div>
                         </div>
-                        <!-- <input type="text" placeholder="성함">
-                        <input type="text" placeholder="연락처">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="문의내용"></textarea> -->
                     </div>
                     <div class="submit">
                         <button class="submit">확인</button>
@@ -320,7 +334,39 @@
         </div>
     </section>
     <footer class="footer-wrap">
-        <div class="content"></div>
+        <div class="footer-content">
+            <div class="flex-box">
+                <div class="logo-box"></div>
+                <div class="grid-box">
+                    <span>
+                        <strong>
+                            주소
+                        </strong>
+                        강원특별자치도 원주시 엄준로 45 B동 814호(반곡동,엔터비즈타워)</span>
+                    <span>
+                        <strong>
+                            사업자 등록번호
+                        </strong>
+                        284-81-03074</span>
+                    <span>
+                        <strong>
+                            대표전화 (팩스)
+                        </strong>
+                        02-8487-4790 (0504-230-5533)</span>
+                    <span>
+                        <strong>
+                            대표이메일
+                        </strong>
+                        itart1004@gmail.com
+                    </span>
+                    <span>
+                        <strong>
+                            대표이사
+                        </strong>
+                        서민지</span>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -333,14 +379,23 @@
                     var hash = this.hash;
 
                     $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
+                        scrollTop: ($(hash).offset().top - 150)
+                    }, 500, function () {
                         window.location.hash = hash;
                     });
+
+                    $(".header-middle ul").toggleClass("menu-on");
+                    $(".header-right .burger-menu .menu__icon").toggleClass("menu-on");
+                    console.log($(hash).offset().top)
+                    console.log($(hash).offset().top - 150)
+                    console.log(window.location.hash)
                 }
             });
 
-
+            $(".header-right .burger-menu").on("click", function () {
+                $(".header-middle ul").toggleClass("menu-on");
+                $(".header-right .burger-menu .menu__icon").toggleClass("menu-on");
+            })
             $(window).on("scroll", function () {
                 // console.log()
                 if ($(window).scrollTop() > 0) {
@@ -348,6 +403,8 @@
                 }
                 else {
                     $(".header-wrap").removeClass("background-on");
+                    $(".header-middle ul").removeClass("menu-on");
+                    $(".header-right .burger-menu .menu__icon").removeClass("menu-on");
                 }
             })
         })
