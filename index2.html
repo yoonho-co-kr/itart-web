@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <meta name="viewport">
     <title>Document</title>
     <script>
         (function (d) {
@@ -20,10 +20,16 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./css/index2.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
+    <section class="landing-pop">
+        <video autoplay="" muted="">
+            <source src="./video/landing.mp4" type="video/mp4">
+        </video>
+    </section>
     <header class="header-wrap">
         <div class="header-box">
             <div class="header-left">
@@ -90,7 +96,16 @@
                         <span class="material-symbols-outlined">
                         </span>
                     </div>
-                    <button class="contact">문의하기</button>
+                    <button class="contact">
+                        <div class="text">문의하기
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                    </button>
                 </div>
                 <div class="burger-menu">
                     <div class="background">
@@ -115,14 +130,23 @@
                 아이타르트
             </div>
             <div class="desc"></div>
-            <button class="contact">문의하기</button>
+            <button class="contact">
+                <div class="text">문의하기
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                        </svg>
+                    </div>
+                </div>
+
+            </button>
         </div>
     </section>
     <section class="project" id="project">
         <div class="title">PROJECT</div>
         <div class="content">
             <ul class="grid-box">
-                <li class="project-box">
+                <li class="project-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="project-image"><img src="./img/project-dummy1.jpg" alt=""></div>
                     <div class="project-title">Lorem ipsum dolor</div>
                     <div class="project-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rem porro
@@ -130,7 +154,7 @@
                         quia veritatis aperiam quod voluptatibus consequuntur?</div>
                     <button class="view-more">더보기</button>
                 </li>
-                <li class="project-box">
+                <li class="project-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="project-image"><img src="./img/project-dummy2.jpg" alt=""></div>
                     <div class="project-title">Lorem ipsum dolor</div>
                     <div class="project-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rem porro
@@ -138,7 +162,7 @@
                         quia veritatis aperiam quod voluptatibus consequuntur?</div>
                     <button class="view-more">더보기</button>
                 </li>
-                <li class="project-box">
+                <li class="project-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="project-image"><img src="./img/project-dummy3.jpg" alt=""></div>
                     <div class="project-title">Lorem ipsum dolor</div>
                     <div class="project-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rem porro
@@ -146,7 +170,7 @@
                         quia veritatis aperiam quod voluptatibus consequuntur?</div>
                     <button class="view-more">더보기</button>
                 </li>
-                <li class="project-box">
+                <li class="project-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="project-image"><img src="./img/project-dummy4.jpg" alt=""></div>
                     <div class="project-title">Lorem ipsum dolor</div>
                     <div class="project-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rem porro
@@ -154,7 +178,7 @@
                         quia veritatis aperiam quod voluptatibus consequuntur?</div>
                     <button class="view-more">더보기</button>
                 </li>
-                <li class="project-box">
+                <li class="project-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="project-image"><img src="./img/project-dummy5.jpg" alt=""></div>
                     <div class="project-title">Lorem ipsum dolor</div>
                     <div class="project-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rem porro
@@ -162,7 +186,7 @@
                         quia veritatis aperiam quod voluptatibus consequuntur?</div>
                     <button class="view-more">더보기</button>
                 </li>
-                <li class="project-box">
+                <li class="project-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="project-image"><img src="./img/project-dummy6.jpg" alt=""></div>
                     <div class="project-title">Lorem ipsum dolor</div>
                     <div class="project-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rem porro
@@ -195,7 +219,7 @@
         <div class="title">SOLUTION</div>
         <div class="content">
             <ul class="grid-box">
-                <li class="solution-box">
+                <li class="solution-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" height="40"
                             viewBox="0 -960 960 960" width="40">
                             <path
@@ -208,7 +232,7 @@
                         quia veritatis aperiam quod voluptatibus consequuntur?</div>
                     <button class="view-more">더보기</button>
                 </li>
-                <li class="solution-box">
+                <li class="solution-box" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top-bottom">
                     <div class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" height="40"
                             viewBox="0 -960 960 960" width="40">
                             <path
@@ -221,7 +245,8 @@
                         quia veritatis aperiam quod voluptatibus consequuntur?</div>
                     <button class="view-more">더보기</button>
                 </li>
-                <li class="solution-box">
+                <li class="solution-box" data-aos="fade-up" data-aos-delay="1000"
+                    data-aos-anchor-placement="top-bottom">
                     <div class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" height="40"
                             viewBox="0 -960 960 960" width="40">
                             <path
@@ -243,31 +268,31 @@
             <div class="year-box">
                 <div class="year-title">2023</div>
                 <ul class="history-box">
-                    <li>
+                    <li data-aos="fade-left">
                         <!-- <div class="circle"></div> -->
                         <div class="date">11/16</div>
                         <div class="title">여성기업 확인</div>
                         <div class="desc">강원지방중소벤처기업청장</div>
                     </li>
-                    <li>
+                    <li data-aos="fade-left">
                         <!-- <div class="circle"></div> -->
                         <div class="date">11/08</div>
                         <div class="title">연구개발전담부서 설립</div>
                         <div class="desc">한국산업기술진흥협회장</div>
                     </li>
-                    <li>
+                    <li data-aos="fade-left">
                         <!-- <div class="circle"></div> -->
                         <div class="date">10/04</div>
                         <div class="title">창업기업 확인</div>
                         <div class="desc">중소벤처기업부장관</div>
                     </li>
-                    <li>
+                    <li data-aos="fade-left">
                         <!-- <div class="circle"></div> -->
                         <div class="date">09/07</div>
                         <div class="title">중소기업 확인</div>
                         <div class="desc">중소벤처기업부장관</div>
                     </li>
-                    <li>
+                    <li data-aos="fade-left">
                         <!-- <div class="circle"></div> -->
                         <div class="date">09/01</div>
                         <div class="title">(주)아이타르트 법인설립</div>
@@ -281,7 +306,7 @@
         <div class="title">NEWSLETTER</div>
         <div class="content">
             <div class="newsletter-wrap">
-                <div class="left">
+                <div class="left" data-aos="fade-right">
                     <div class="title">프로젝트 문의</div>
                     <div class="info">
                         <div class="address">
@@ -327,7 +352,16 @@
                         </div>
                     </div>
                     <div class="submit">
-                        <button class="submit">확인</button>
+                        <button class="submit">
+                            <div class="text">문의하기
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                                        width="24">
+                                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
                     </div>
                 </div>
                 <div class="right">google map</div>
@@ -369,7 +403,9 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        AOS.init();
+    </script>
     <script>
         $(document).ready(function () {
 
@@ -387,9 +423,6 @@
 
                     $(".header-middle ul").toggleClass("menu-on");
                     $(".header-right .burger-menu .menu__icon").toggleClass("menu-on");
-                    console.log($(hash).offset().top)
-                    console.log($(hash).offset().top - 150)
-                    console.log(window.location.hash)
                 }
             });
 
@@ -408,8 +441,22 @@
                     $(".header-right .burger-menu .menu__icon").removeClass("menu-on");
                 }
             })
+
+            $("button.view-more").html(`<div class="text">더보기
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                                        width="24">
+                                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                                    </svg>
+                                </div>
+                            </div>`)
+        })
+
+        $("button.contact").click(function () {
+            $("html, body").animate({ scrollTop: $("#newsletter").offset().top }, 100)
         })
     </script>
+
 </body>
 
 </html>

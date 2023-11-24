@@ -51,13 +51,101 @@ button {
     background-color: var(--color-500);
     color: #ffffff;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+button .text {
+    transition: 0.2s;
+    position: relative;
+}
+
+button .text .icon {
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: 0.2s;
+    opacity: 0;
+}
+
+button .text .icon svg {
+    fill: #ffffff;
+}
+
+button:hover .text {
+    transform: translate(-12px, 0);
+}
+
+button:hover .icon {
+    transform: translate(24px, -50%);
+    opacity: 1;
+}
+
+section.landing-pop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 9999999;
+    top: 0;
+    -webkit-animation: puff-out-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 6.5s both;
+    animation: puff-out-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 6.5s both;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.landing-pop video {
+    width: 100%;
+}
+
+@-webkit-keyframes puff-out-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes puff-out-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .header-wrap {
     width: 100%;
     position: fixed;
     top: 0;
-    padding: 36px 0;
+    padding: 16px 0;
     z-index: 999999;
     /* border-radius: 40px; */
     border: 1px solid transparent;

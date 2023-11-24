@@ -16,7 +16,8 @@
         })(document);
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -123,7 +124,7 @@
         </div>
     </section>
     <section class="solution">
-        <div class="content-wrap">
+        <div class="content-wrap" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div class="content left">
                 <div class="title">Lorem ipsum dolor </div>
                 <div class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus commodi, architecto,
@@ -140,7 +141,7 @@
                 <div class="background"></div>
             </div>
         </div>
-        <div class="content-wrap">
+        <div class="content-wrap" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div class="content left">
                 <div class="title">Lorem ipsum dolor </div>
                 <div class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus commodi, architecto,
@@ -157,7 +158,7 @@
                 <div class="background"></div>
             </div>
         </div>
-        <div class="content-wrap">
+        <div class="content-wrap" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div class="content left">
                 <div class="title">Lorem ipsum dolor </div>
                 <div class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus commodi, architecto,
@@ -243,6 +244,9 @@
         </div>
     </section>
     <script>
+        AOS.init();
+    </script>
+    <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -251,6 +255,7 @@
                 clickable: true,
             },
         });
+
         $(document).ready(function () {
             $(".static-fill .content.active-click").on("click", function () {
                 if ($(this).hasClass("active-click") == true) {

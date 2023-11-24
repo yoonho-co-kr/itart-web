@@ -17,7 +17,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 
     font-family: "pretendard", sans-serif;
     /* font-family: "ds-endendend", sans-serif; */
@@ -56,7 +56,10 @@ button {
     background-color: var(--color-500);
     color: #ffffff;
     cursor: pointer;
+    transition: 0.2s;
 }
+
+
 
 .header-wrap {
     position: fixed;
