@@ -372,11 +372,11 @@ div.logo-wrap .logo .text {
     transition-delay: 0.6s;
 }
 
-.portfolio .perspective.on {
+/* .portfolio .perspective.on {
     transform: translate(50%, -50%);
     transition: 0.2s;
     transition-delay: 0s;
-}
+} */
 
 .portfolio .window.on {
     transition-delay: 0s;
@@ -1214,6 +1214,7 @@ section.history.on .history-wrap .text-box .text::before {
     .content-wrap .content-box div:nth-child(5) {
         height: 20px;
     }
+
 
     .portfolio .window.on .t5 {
         transform: translate(10px, -10px);
