@@ -25,7 +25,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 
     font-family: "pretendard", sans-serif;
     /* font-family: "ds-endendend", sans-serif; */
@@ -196,6 +196,7 @@ footer {
 
 .header-wrap .menu-box .menu {
     padding: 8px 16px;
+    word-break: keep-all;
 }
 
 .landing-wrap {
@@ -1284,6 +1285,10 @@ footer .info span:not(:nth-child(6))::after {
 @media screen and (max-width: 480px) {
     section {
         padding: 150px 0;
+    }
+
+    .header-wrap {
+        height: 60px;
     }
 
     .header-wrap .menu-box {

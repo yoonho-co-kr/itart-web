@@ -30,9 +30,15 @@
 
             </div>
             <div class="menu-box">
-                <div class="menu">포트폴리오</div>
-                <div class="menu">회사소개</div>
-                <div class="menu">프로젝트</div>
+                <a href="#portfolio">
+                    <div class="menu">포트폴리오</div>
+                </a>
+                <a href="#history">
+                    <div class="menu">회사소개</div>
+                </a>
+                <a href="#project">
+                    <div class="menu">프로젝트</div>
+                </a>
             </div>
         </div>
     </header>
@@ -61,7 +67,7 @@
         </div>
     </section>
     <section class="portfolio">
-        <div class="portfolio-wrap">
+        <div class="portfolio-wrap" id="portfolio">
             <div class="portfolio-box">
                 <div class="portfolio title-box">
                     <div class="top">
@@ -155,7 +161,7 @@
         </div>
     </section>
     <section class="history">
-        <div class="history-wrap">
+        <div class="history-wrap" id="history">
             <div class="history-box">
                 <div class="history title-box">
                     <div class="top">
@@ -264,7 +270,7 @@
         </div>
     </section>
     <section class="project">
-        <div class="project-wrap">
+        <div class="project-wrap" id="project">
             <div class="project-box">
                 <div class="project title-box">
                     <div class="top">
@@ -590,6 +596,23 @@
                 console.log("top")
             }
         })
+        // $("a").on('click', function (event) {
+        //     if (this.hash !== "") {
+        //         event.preventDefault();
+
+        //         var hash = this.hash;
+
+        //         $('html, body').animate({
+        //             scrollTop: ($(hash).offset().top + 200)
+        //         }, 500, function () {
+        //             window.location.hash = hash;
+        //         });
+
+        //         $(".header-middle ul").toggleClass("menu-on");
+        //         $(".header-right .burger-menu .menu__icon").toggleClass("menu-on");
+        //     }
+        // });
+
     })
 
 </script>
