@@ -23,6 +23,20 @@
     width: device-width;
 }
 
+@font-face {
+    font-family: "Cafe24Ohsquare-v2.0";
+    src: url(../font/Cafe24Ohsquare-v2.0.woff2);
+    src: url(../font/Cafe24Ohsquare-v2.0.otf);
+    src: url(../font/Cafe24Ohsquare-v2.0.ttf);
+}
+
+@font-face {
+    font-family: "Cafe24OhsquareAir-v2.0";
+    src: url(../font/Cafe24OhsquareAir-v2.0.woff2);
+    src: url(../font/Cafe24OhsquareAir-v2.0.otf);
+    src: url(../font/Cafe24OhsquareAir-v2.0.ttf);
+}
+
 *,
 body {
     margin: 0;
@@ -313,7 +327,9 @@ section>.title,
 section.spotlight .content .title,
 section.history .content .history-box li .title,
 section.newsletter .content .newsletter-wrap .left .title {
-    font-family: omnigothic, sans-serif;
+    font-family: "Cafe24Ohsquare-v2.0";
+    /* font-family: "computersetak", sans-serif; */
+
 }
 
 section.landing .landing-text-box .title {
@@ -323,12 +339,13 @@ section.landing .landing-text-box .title {
     margin-top: 70px;
     margin-bottom: 70px;
     width: auto;
+    font-family: "Cafe24OhsquareAir-v2.0";
 }
 
 section.landing .landing-text-box .title strong {
     font-size: 150px;
     word-break: keep-all;
-    font-weight: 900;
+    font-weight: 500;
     /* color: var(--color-100); */
 }
 
@@ -339,6 +356,7 @@ section.landing .landing-text-box .sub-title {
     margin-bottom: 50px;
     color: var(--color-100);
     width: auto;
+    font-family: "Cafe24OhsquareAir-v2.0";
 }
 
 section {
@@ -1374,7 +1392,7 @@ section.newsletter .content .newsletter-wrap .left .submit button {
 
     section.spotlight .content .title {
         font-size: 24px;
-        font-weight: 700
+        font-weight: 500
     }
 
     .input-container input[type="text"]:focus~.label,
