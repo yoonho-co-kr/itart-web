@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>Document</title>
     <script>
         (function (d) {
@@ -19,7 +19,7 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./css/index2.css">
+    <link rel="stylesheet" href="./css/index2-2.css">
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
@@ -36,6 +36,9 @@
                 <a href="#landing">
                     <div class="logo"></div>
                 </a>
+            </div>
+            <div class="header-middle">
+
             </div>
             <div class="header-right">
                 <ul class="menu-box">
@@ -91,11 +94,11 @@
 
                 </ul>
                 <div class="search-wrap">
-                    <!-- <div class="input-box"></div>
+                    <div class="input-box"></div>
                     <div class="search-icon">
                         <span class="material-symbols-outlined">
                         </span>
-                    </div> -->
+                    </div>
                     <button class="contact">
                         <div class="text">문의하기
                             <div class="icon">
@@ -421,13 +424,13 @@
                         window.location.hash = hash;
                     });
 
-                    $(".header-right .menu-box").toggleClass("menu-on");
+                    $(".header-middle ul").toggleClass("menu-on");
                     $(".header-right .burger-menu .menu__icon").toggleClass("menu-on");
                 }
             });
 
             $(".header-right .burger-menu").on("click", function () {
-                $(".header-right .menu-box").toggleClass("menu-on");
+                $(".header-middle ul").toggleClass("menu-on");
                 $(".header-right .burger-menu .menu__icon").toggleClass("menu-on");
             })
             $(window).on("scroll", function () {
@@ -437,7 +440,7 @@
                 }
                 else {
                     $(".header-wrap").removeClass("background-on");
-                    $(".header right .menu-box").removeClass("menu-on");
+                    $(".header-middle ul").removeClass("menu-on");
                     $(".header-right .burger-menu .menu__icon").removeClass("menu-on");
                 }
             })

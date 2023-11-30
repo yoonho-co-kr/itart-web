@@ -11,9 +11,20 @@
     --color-400-background: rgba(235, 112, 135, 0.07);
 }
 
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
 *,
-body,
-html {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,11 +35,8 @@ html {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    /* width: 100%; */
-}
-
-html {
-    max-width: 100vw;
+    max-width: 100%;
+    width: 100%;
 }
 
 ul,
@@ -38,12 +46,13 @@ a {
     list-style: none;
     color: #333333;
     display: block;
+    padding: 0;
 }
 
 button {
     appearance: none;
     border: none;
-    width: 208px;
+    width: 140px;
     height: 48px;
     border-radius: 40px;
     font-weight: 700;
@@ -68,7 +77,7 @@ button .text .icon {
     height: 24px;
 
     position: absolute;
-    right: -12px;
+    right: 24px;
     top: 50%;
     transform: translate(0, -50%);
     transition: 0.2s;
@@ -146,6 +155,7 @@ section.landing-pop video {
 }
 
 .header-wrap {
+    max-width: 100%;
     width: 100%;
     position: fixed;
     top: 0;
@@ -185,10 +195,12 @@ section.landing-pop video {
     width: auto;
     display: flex;
     gap: 16px;
+    align-items: center;
 }
 
 .header-wrap .header-box .header-left a {
     width: 300px;
+    height: 100%;
 }
 
 .header-wrap .header-box .header-left .logo {
@@ -203,7 +215,7 @@ section.landing-pop video {
 
 .header-wrap .header-box .header-right .menu-box {
     display: flex;
-    gap: 24px;
+    /* gap: 24px; */
     height: 100%;
 }
 
@@ -217,15 +229,19 @@ section.landing-pop video {
     transform: translate(0, -100%);
 }
 
+.header-wrap .header-box .header-right .menu-box .menu {
+    width: fit-content;
+}
+
 .header-wrap .header-box .header-right .menu-box .menu a {
     height: 100%;
-
+    width: 100%;
     transition: 0.2s;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 0 16px;
 }
 
 .header-wrap.background-on .header-box .header-right .menu-box .menu a div {
@@ -306,6 +322,7 @@ section.landing .landing-text-box .title {
     font-weight: 300;
     margin-top: 70px;
     margin-bottom: 70px;
+    width: auto;
 }
 
 section.landing .landing-text-box .title strong {
@@ -321,6 +338,7 @@ section.landing .landing-text-box .sub-title {
     font-weight: 500;
     margin-bottom: 50px;
     color: var(--color-100);
+    width: auto;
 }
 
 section {
@@ -407,6 +425,7 @@ section.solution .content .grid-box .solution-box .solution-title {
     margin: 32px 0 24px 0;
     font-size: 20px;
     font-weight: 700;
+    width: auto;
 }
 
 section.project .content .grid-box .project-box .project-desc,
@@ -456,6 +475,7 @@ section.spotlight .content .title {
     font-size: 80px;
     font-weight: 900;
     mix-blend-mode: difference;
+    width: auto;
 }
 
 section.solution .content .grid-box .solution-box .solution-icon {
@@ -583,6 +603,15 @@ section.newsletter .content .newsletter-wrap .left .info>div {
     display: flex;
     gap: 16px;
     align-items: center;
+    width: auto;
+}
+
+section.newsletter .content .newsletter-wrap .icon {
+    width: auto;
+}
+
+section.newsletter .content .newsletter-wrap svg {
+    width: auto;
 }
 
 section.newsletter .content .newsletter-wrap .left .info>div .text {
@@ -664,10 +693,12 @@ footer.footer-wrap .footer-content .flex-box .grid-box {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
     row-gap: 4px;
+    width: auto;
 }
 
 footer.footer-wrap .footer-content .flex-box .grid-box span {
     font-weight: 300;
+    width: auto;
 }
 
 footer.footer-wrap .footer-content .flex-box .grid-box span:nth-child(1) {
@@ -788,6 +819,7 @@ section.newsletter .content .newsletter-wrap .left .submit button {
     display: flex;
     align-items: center;
     display: none;
+    width: auto;
 }
 
 .header-right .burger-menu button {
@@ -959,6 +991,12 @@ section.newsletter .content .newsletter-wrap .left .submit button {
     }
 }
 
+@media screen and (max-width: 1640px) {
+    .header-wrap .header-box {
+        padding: 0 20px;
+    }
+}
+
 @media screen and (max-width: 1366px) {
     section {
         padding: 60px 20px;
@@ -979,6 +1017,10 @@ section.newsletter .content .newsletter-wrap .left .submit button {
     .header-wrap .header-box .header-left,
     .header-wrap .header-box .header-right {
         width: auto;
+    }
+
+    .header-wrap .header-box .header-left a {
+        width: 200px;
     }
 
     .header-wrap .header-box .header-right .menu-box .menu a div {
@@ -1010,18 +1052,21 @@ section.newsletter .content .newsletter-wrap .left .submit button {
 
 @media screen and (max-width: 1366px) and (orientation:landscape) {}
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
 
     .header-right .burger-menu {
         display: block;
     }
 
     .header-wrap {
-        padding: 24px 0;
+        padding: 24px 20px;
     }
 
     .header-wrap .header-box {
         height: 40px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
 
@@ -1029,7 +1074,7 @@ section.newsletter .content .newsletter-wrap .left .submit button {
         display: none;
     }
 
-    .header-wrap .header-box .header-middle {
+    .header-wrap .header-box .header-right .menu-box {
         display: block;
         position: fixed;
         width: 100%;
@@ -1042,21 +1087,35 @@ section.newsletter .content .newsletter-wrap .left .submit button {
         flex-direction: column;
         gap: 0;
         height: 0;
-        transition: 0.5s;
+
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         /* background-color: rgba(0, 0, 0, 0.9); */
-        background-color: #46415E;
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
     .header-wrap .header-box .header-right .menu-box.menu-on {
         height: auto;
+        transition: 0.3s;
     }
 
     .header-wrap .header-box .header-right .menu-box .menu {
+        width: 100%;
         height: 0;
         display: flex;
         justify-content: center;
-        gap: 8px;
+        padding: 0;
+    }
+
+    .header-wrap .header-box .header-right .menu-box.menu-on .menu {
+        padding: 8px 0;
+    }
+
+    .header-wrap .header-box .header-right .menu-box .menu a:nth-child(1) div {
+        justify-content: flex-end;
+    }
+
+    .header-wrap .header-box .header-right .menu-box .menu a:nth-child(2) div {
+        justify-content: flex-start;
     }
 
     .header-wrap .header-box .header-right .menu-box .menu:hover a {
@@ -1150,6 +1209,18 @@ section.newsletter .content .newsletter-wrap .left .submit button {
         justify-content: space-between;
     }
 
+}
+
+@media screen and (max-width: 612px) {
+
+    section.landing .landing-text-box .title,
+    section.landing .landing-text-box .title strong {
+        font-size: 60px;
+    }
+
+    section.landing .landing-text-box .sub-title {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1327,7 +1398,7 @@ section.newsletter .content .newsletter-wrap .left .submit button {
         height: 1px;
     }
 
-    .header-wrap .header-box .header-middle {
+    .header-wrap .header-box .header-right .menu-box {
         display: block;
         position: fixed;
         width: 100%;
@@ -1340,11 +1411,12 @@ section.newsletter .content .newsletter-wrap .left .submit button {
         flex-direction: column;
         gap: 0;
         height: 0;
-        transition: 0.5s;
+
     }
 
     .header-wrap .header-box .header-right .menu-box.menu-on {
         height: auto;
+        transition: 0.3s;
     }
 
     .header-wrap .header-box .header-right .menu-box .menu {
@@ -1355,7 +1427,7 @@ section.newsletter .content .newsletter-wrap .left .submit button {
     }
 
     .header-wrap .header-box .header-right .menu-box.menu-on .menu {
-        height: 80px;
+        height: 40px;
     }
 
     .header-wrap .header-box .header-right .menu-box .menu a div {
@@ -1397,4 +1469,29 @@ section.newsletter .content .newsletter-wrap .left .submit button {
         justify-content: space-between;
     }
 
+}
+
+@media screen and (max-width: 320px) {
+
+    section.landing .landing-text-box .title,
+    section.landing .landing-text-box .title strong {
+        font-size: 30px;
+    }
+
+    section.landing .landing-text-box .sub-title {
+        font-size: 14px;
+    }
+
+    section.spotlight .content .title {
+        font-size: 18px;
+    }
+
+    section.project .content .grid-box,
+    section.solution .content .grid-box {
+        grid-template-columns: 1fr;
+    }
+
+    .header-wrap .header-box .header-right .menu-box .menu {
+        gap: 0;
+    }
 }
