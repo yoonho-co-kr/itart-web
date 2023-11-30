@@ -616,17 +616,20 @@ footer {
     transition: 0.3s;
 
     mix-blend-mode: lighten;
+    text-align: center;
 }
 
 .manage-wrap .manage-box .manage .text .subtitle {
     font-size: 24px;
     color: #767676;
     transition: 0.3s;
+    text-align: center;
 }
 
 .manage-wrap .manage-box .manage.on-hover .text .title,
 .manage-wrap .manage-box .manage.on-hover .text .subtitle {
     color: #ffffff;
+
 }
 
 .manage-wrap .manage-box .manage .icon {
@@ -659,8 +662,8 @@ footer {
     background-image: url(../img/manage-manage.png);
 }
 
-.manage-wrap .manage-box .manage:nth-child(1)::before,
-.manage-wrap .manage-box .manage:nth-child(4)::before {
+.manage-wrap .manage-box .manage:nth-child(2)::before,
+.manage-wrap .manage-box .manage:nth-child(5)::before {
     content: "";
     display: block;
     width: 100%;
@@ -673,12 +676,12 @@ footer {
     top: 0;
 }
 
-.manage-wrap .manage-box .manage:nth-child(1)::before {
+.manage-wrap .manage-box .manage:nth-child(2)::before {
     left: calc(-100% - 16px);
     background-color: var(--color2-200);
 }
 
-.manage-wrap .manage-box .manage:nth-child(4)::before {
+.manage-wrap .manage-box .manage:nth-child(5)::before {
     right: calc(-100% - 16px);
 }
 
@@ -711,6 +714,14 @@ footer {
         "agree agree agree"
         "acbox . submit";
     align-items: center;
+}
+
+.project-wrap .project-box .project:nth-child(2) .checkbox-wrap label {
+    width: auto;
+}
+
+.project-wrap .project-box .project:nth-child(2) .checkbox-wrap label span {
+    word-break: keep-all;
 }
 
 .project-wrap .project-box .project:nth-child(2) .content:nth-child(1) {
@@ -922,15 +933,22 @@ footer .logo {
 footer .link {
     display: flex;
     gap: 80px;
+    justify-content: center;
+}
+
+footer .link a {
+    width: auto;
 }
 
 footer .info {
     display: flex;
     gap: 16px;
+    justify-content: center;
 }
 
 footer .info span {
     position: relative;
+    width: auto;
 }
 
 footer .info span:not(:nth-child(6))::after {
@@ -1472,8 +1490,8 @@ footer .info span:not(:nth-child(6))::after {
     }
 
 
-    .manage-wrap .manage-box .manage:nth-child(1)::before,
-    .manage-wrap .manage-box .manage:nth-child(4)::before {
+    .manage-wrap .manage-box .manage:nth-child(2)::before,
+    .manage-wrap .manage-box .manage:nth-child(5)::before {
         display: none;
     }
 
