@@ -491,7 +491,7 @@ section.spotlight .content .title {
 
     color: #ffffff;
     font-size: 80px;
-    font-weight: 900;
+    font-weight: 500;
     mix-blend-mode: difference;
     width: auto;
 }
@@ -525,10 +525,11 @@ section.history .content .year-box {
 }
 
 section.history .content .year-box .year-title {
-    font-size: 80px;
+    font-size: 40px;
     color: var(--color-400);
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 24px;
+    font-family: "Cafe24Ohsquare-v2.0";
 }
 
 /* section.history .content .history-box {
@@ -573,7 +574,7 @@ section.history .content .history-box li .date {
 section.history .content .history-box li .title {
     grid-area: title;
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 500;
     /* color: var(--color-400); */
     color: #333333;
 }
@@ -606,7 +607,7 @@ section.newsletter .content .newsletter-wrap .left {
 
 section.newsletter .content .newsletter-wrap .left .title {
     font-size: 40px;
-    font-weight: 900;
+    font-weight: 500;
     margin-bottom: 40px;
     color: var(--color-500);
 }
@@ -741,6 +742,21 @@ footer.footer-wrap .footer-content .flex-box .grid-box span:nth-child(5) {
 
 footer.footer-wrap .footer-content .flex-box .grid-box span strong {
     font-weight: 700;
+}
+
+footer.footer-wrap .footer-content .flex-box .grid-box span.address {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+footer.footer-wrap .footer-content .flex-box .grid-box span.address p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+footer.footer-wrap .footer-content .flex-box .grid-box span.address strong {
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
 .input-container {
@@ -1218,7 +1234,8 @@ section.newsletter .content .newsletter-wrap .left .submit button {
     }
 
     footer.footer-wrap .footer-content .flex-box .grid-box span strong,
-    footer.footer-wrap .footer-content .flex-box .grid-box span {
+    footer.footer-wrap .footer-content .flex-box .grid-box span,
+    footer.footer-wrap .footer-content .flex-box .grid-box span.address p {
         font-size: 14px;
     }
 
@@ -1349,7 +1366,7 @@ section.newsletter .content .newsletter-wrap .left .submit button {
     }
 
     section.history .content .year-box .year-title {
-        font-size: 48px;
+        font-size: 32px;
     }
 
     section.history .content .year-box .history-box {
@@ -1472,8 +1489,19 @@ section.newsletter .content .newsletter-wrap .left .submit button {
     }
 
     footer.footer-wrap .footer-content .flex-box .grid-box span strong,
-    footer.footer-wrap .footer-content .flex-box .grid-box span {
+    footer.footer-wrap .footer-content .flex-box .grid-box span,
+    footer.footer-wrap .footer-content .flex-box .grid-box span.address p {
         font-size: 10px;
+    }
+
+    footer.footer-wrap .footer-content .flex-box .grid-box span strong,
+    footer.footer-wrap .footer-content .flex-box .grid-box span.address p {
+        width: auto;
+    }
+
+    footer.footer-wrap .footer-content .flex-box .grid-box span.address p {
+        text-align: right;
+        word-break: keep-all;
     }
 
     footer.footer-wrap .footer-content .flex-box .grid-box span {
