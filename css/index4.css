@@ -192,11 +192,17 @@ footer {
     display: flex;
     align-items: center;
     gap: 16px;
+    width: auto;
+}
+
+.header-wrap .menu-box a {
+    width: auto;
 }
 
 .header-wrap .menu-box .menu {
     padding: 8px 16px;
     word-break: keep-all;
+    width: 100%;
 }
 
 .landing-wrap {
@@ -722,6 +728,7 @@ footer {
 
 .project-wrap .project-box .project:nth-child(2) .checkbox-wrap label span {
     word-break: keep-all;
+    width: auto;
 }
 
 .project-wrap .project-box .project:nth-child(2) .content:nth-child(1) {
@@ -872,6 +879,7 @@ footer {
     stroke-width: 1;
     transform: translate3d(0, 0, 0);
     transition: all 0.2s ease;
+    width: 18px;
 }
 
 .check svg path {
@@ -1031,6 +1039,27 @@ footer .info span:not(:nth-child(6))::after {
 
     .project-wrap .project-box {
         max-width: calc(100vw - 100px);
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+        row-gap: 8px;
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap input[type="text"] {
+        margin-left: 8px;
+        width: 100%;
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap .check {
+        width: 100%;
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap .check:nth-child(20) {
+        grid-column-start: 1;
+        grid-column-end: 5;
     }
 
     footer .info {
@@ -1503,6 +1532,27 @@ footer .info span:not(:nth-child(6))::after {
         display: flex;
         flex-direction: column;
         max-width: none;
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        row-gap: 8px;
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap input[type="text"] {
+        margin-left: 8px;
+        width: 100%;
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap .check {
+        width: 100%;
+    }
+
+    .project-wrap .project-box .project:nth-child(2) .content .checkbox-wrap .check:nth-child(20) {
+        grid-column-start: 1;
+        grid-column-end: 5;
     }
 
     .project-wrap .project-box .project:nth-child(2) .content span {
