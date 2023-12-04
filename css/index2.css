@@ -985,6 +985,7 @@ footer.footer-wrap .footer-content .flex-box .grid-box span.address strong {
     padding: 5px 0;
     background-color: transparent;
     outline: none;
+    border-radius: 0;
 }
 
 .input-container textarea {
