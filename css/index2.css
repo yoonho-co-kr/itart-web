@@ -513,6 +513,17 @@ section.solution .content .grid-box .solution-box:hover {
     background-color: var(--color-400-background);
 }
 
+section.project .content .grid-box .project-box:hover button,
+section.solution .content .grid-box .solution-box:hover button {
+    background-color: var(--color-400);
+    color: #ffffff;
+}
+
+section.project .content .grid-box .project-box:hover button svg,
+section.solution .content .grid-box .solution-box:hover button svg {
+    fill: #ffffff;
+}
+
 section.project .content .grid-box .project-box .project-image {
     width: 100%;
     aspect-ratio: 16 / 9;
