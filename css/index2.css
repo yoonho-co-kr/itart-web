@@ -135,8 +135,10 @@ button:hover .icon {
 
 section.landing-pop {
     /* position: fixed; */
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    /* height: calc(100vh - 80px);
+    max-height: 1142px; */
+    aspect-ratio: 16/9;
     background-color: #ffffff;
     color: var(--crimson-shade-03);
     z-index: 9999999;
@@ -147,10 +149,50 @@ section.landing-pop {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1903px;
+    margin: 80px auto 0;
+}
+
+.html5-video-player:not(.ytp-transparent),
+.html5-video-player.unstarted-mode,
+.html5-video-player.ad-showing,
+.html5-video-player.ended-mode {
+    background-color: #f4f2f3 !important;
+}
+
+.ytp-cued-thumbnail-overlay-image {
+    background-size: contain;
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
 }
 
 section.landing-pop video {
     width: 100%;
+    height: auto;
+}
+
+section.landing-pop .video-wrap {
+    width: 110%;
+    height: 110%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 75%;
+    position: relative;
+}
+
+section.landing-pop iframe {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    outline: none;
 }
 
 @-webkit-keyframes puff-out-center {
@@ -1454,6 +1496,10 @@ section.newsletter .content .newsletter-wrap .left .submit button {
 @media screen and (max-width: 480px) {
     section {
         padding: 40px 10px;
+    }
+
+    section.landing-pop .video-wrap {
+        padding-bottom: 85%;
     }
 
     section.landing .landing-text-box .title {
