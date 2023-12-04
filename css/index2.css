@@ -978,6 +978,9 @@ footer.footer-wrap .footer-content .flex-box .grid-box span.address strong {
 }
 
 .input-container input[type="text"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     font-size: 20px;
     width: 100%;
     border: none;
@@ -989,6 +992,9 @@ footer.footer-wrap .footer-content .flex-box .grid-box span.address strong {
 }
 
 .input-container textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     font-size: 20px;
     width: 100%;
     border: none;
@@ -999,6 +1005,7 @@ footer.footer-wrap .footer-content .flex-box .grid-box span.address strong {
     resize: none;
     margin: 0;
     height: 150px;
+    border-radius: 0;
 }
 
 section.newsletter .content .newsletter-wrap .left .input .input-container:nth-child(3) .underline {
